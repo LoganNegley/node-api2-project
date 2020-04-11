@@ -22,4 +22,17 @@ router.post('/', (req, res) => {
         })
 });
 
+// GET request to get all posts
+router.get('/', (req, res) =>{
+    const posts = db.find();
+
+    if(posts){
+        res.json(posts)
+    } else{
+        res.status(500).json({
+            error:'The posts information could not be retieved'
+        })
+    }
+});
+
 module.exports = router;
