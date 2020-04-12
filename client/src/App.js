@@ -26,7 +26,7 @@ function App() {
       <h1>My Posts</h1>
       <PostsList posts={posts}/>
 
-      <Route path='/update-post/:id' render={props => <UpdateForm/>}/>
+      <Route path='/update-post/:id' render={props => <UpdateForm {...props} />}/>
     </div>
   );
 }
