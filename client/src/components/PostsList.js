@@ -1,18 +1,22 @@
 import React from 'react';
+import { Card, Button, CardTitle, CardText } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 function PostsList(props) {
 
-
-
   return (
-    <div className="posts-container">
-      {props.posts.map(item =>(
-        <div className="post" key={item.id}>
-          <h3>{item.title}</h3>
-          <p>{item.contents}</p>
-        </div>
-      ))}
-    </div>
+      <Container>
+        <Row xs="1" sm="2" md="4">
+          {props.posts.map(item =>(
+            <Card body inverse color="info" className="text-center" key={item.id}>
+              <CardTitle>{item.title}</CardTitle>
+              <CardText>{item.contents}</CardText>
+              <Button>Edit Post</Button>
+            </Card>
+          ))}
+        </Row>
+      </Container>
+
   );
 }
 
