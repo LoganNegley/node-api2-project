@@ -1,7 +1,11 @@
 import React, {useEffect, useState} from 'react';
+import { Route } from "react-router-dom";
+import { Router } from 'react-router';
 import './App.css';
 import axios from 'axios';
 import PostsList from './components/PostsList';
+import UpdateForm from './components/UpdateForm';
+
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -21,6 +25,8 @@ function App() {
     <div className="App">
       <h1>My Posts</h1>
       <PostsList posts={posts}/>
+
+      <Route path='/update-post/:id' render={props => <UpdateForm/>}/>
     </div>
   );
 }

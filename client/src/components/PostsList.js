@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
+import {Link} from 'react-router-dom';
 
 function PostsList(props) {
 
@@ -11,7 +12,9 @@ function PostsList(props) {
             <Card body inverse color="info" className="text-center" key={item.id}>
               <CardTitle>{item.title}</CardTitle>
               <CardText>{item.contents}</CardText>
-              <Button>Edit Post</Button>
+              <Link to={`/update-post/${item.id}`}>
+                <Button>Edit Post</Button>
+              </Link>
             </Card>
           ))}
         </Row>
