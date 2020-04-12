@@ -1,11 +1,22 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
+
+const initialPost ={
+    title: '',
+    content: ''
+};
 
 function UpdateForm(props) {
-console.log(props)
+    const [post, setPost] = useState(initialPost);
+    const id = props.match.params.id;
+    
+    console.log(props)
+
   return (
       <div className='updateForm'>
-        <h1>Form goes here</h1>
+        <form>
+
+        </form>
       </div>
 
   );

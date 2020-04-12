@@ -7,6 +7,7 @@ function PostsList(props) {
 
   return (
       <Container>
+      <h1>My Posts</h1>
         <Row xs="1" sm="2" md="4">
           {props.posts.map(item =>(
             <Card body inverse color="info" className="text-center" key={item.id}>
