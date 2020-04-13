@@ -62,7 +62,7 @@ const handleSubmit = event => {
                 value = {post.contents}
                 onChange={handleChange}
             />
-            <buton type='submit'>Update</buton>
+            <button type='submit'>Update</button>
         </form>
       </div>
 

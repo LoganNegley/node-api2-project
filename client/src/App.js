@@ -23,7 +23,11 @@ function App() {
 
   useEffect(() => {
     getPostsList();
-  },[]);
+  },[postsList]);
+
+    if(!postsList){ 
+     return <h3>....Loading your posts</h3>
+  };
 
 
   return (
