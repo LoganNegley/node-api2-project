@@ -34,7 +34,7 @@ const handleChange = event => {
 const handleSubmit = event => {
     event.preventDefault();
     axios
-    .put(`http://localhost:4000/api/posts${id}`)
+    .put(`http://localhost:4000/api/posts/${id}`, post)
     .then(response =>{
         console.log(response)
         props.history.push('/')
@@ -47,7 +47,7 @@ const handleSubmit = event => {
 
   return (
       <div className='updateForm'>
-        <form onClick={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <input
                 name='title'
                 type='text-'
@@ -62,7 +62,7 @@ const handleSubmit = event => {
                 value = {post.contents}
                 onChange={handleChange}
             />
-            <buton>Update</buton>
+            <buton type='submit'>Update</buton>
         </form>
       </div>
 
