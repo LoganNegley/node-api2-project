@@ -21,11 +21,13 @@ function App() {
     })
   }
 
+
+
   useEffect(() => {
     getPostsList();
   },[postsList]);
 
-    if(!postsList){ 
+      if(!postsList){ 
      return <h3>....Loading your posts</h3>
   };
 
@@ -36,7 +38,7 @@ function App() {
       <Route exact path="/">
         <PostsList posts={postsList}/>
       </Route>
-      <Route path='/update-post/:id' render={props => <UpdateForm {...props} postsList={postsList} getPostsList={getPostsList} />}/>
+      <Route path='/update-post/:id' render={props => <UpdateForm {...props} postsList={postsList} />}/>
     </div>
   );
 }
