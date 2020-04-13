@@ -20,12 +20,12 @@ function App() {
       console.log(error, 'There was an error getting posts back from api')
     })
   }
-
+ console.log(postsList)
 
 
   useEffect(() => {
     getPostsList();
-  },[postsList]);
+  },[]);
 
       if(!postsList){ 
      return <h3>....Loading your posts</h3>
@@ -38,7 +38,7 @@ function App() {
       <Route exact path="/">
         <PostsList posts={postsList}/>
       </Route>
-      <Route path='/update-post/:id' render={props => <UpdateForm {...props} postsList={postsList} />}/>
+      <Route path='/update-post/:id' render={props => <UpdateForm {...props} postsList={postsList} getPostsList={getPostsList}/>}/>
     </div>
   );
 }

@@ -22,8 +22,6 @@ const id = props.match.params.id;
         }
     },[props.postsList]);
 
-    console.log(post)
-
 const handleChange = event => {
     setPost({
         ...post,
@@ -38,10 +36,13 @@ const handleSubmit = event => {
     .then(response =>{
         console.log(response)
         props.history.push('/')
+          props.getPostsList()
     })
     .catch(error =>{
         console.log(error, 'error with making a put request to update posts')
     })
+
+  
 };
 
 
