@@ -3,13 +3,13 @@ import axios from 'axios';
 
 const initialPost = {
     title:'',
-    content:''
+    contents:''
 }
 
 
 function UpdateForm(props) {
 const [post, setPost] = useState(initialPost);
-
+const id = props.match.params.id;
 
  // Find the post matching ID
     useEffect(()=>{
@@ -22,13 +22,47 @@ const [post, setPost] = useState(initialPost);
         }
     },[props.postsList]);
 
+    console.log(post)
 
+const handleChange = event => {
+    setPost({
+        ...post,
+        [event.target.name]: event.target.value
+    })
+};
+
+const handleSubmit = event => {
+    event.preventDefault();
+    axios
+    .put(`http://localhost:4000/api/posts${id}`)
+    .then(response =>{
+        console.log(response)
+        props.history.push('/')
+    })
+    .catch(error =>{
+        console.log(error, 'error with making a put request to update posts')
+    })
+};
 
 
   return (
       <div className='updateForm'>
-        <form>
-
+        <form onClick={handleSubmit}>
+            <input
+                name='title'
+                type='text-'
+                placeholder="Title"
+                value={post.title}
+                onChange={handleChange}
+            />
+            <input
+                name='contents'
+                type='text'
+                placeholder='Content'
+                value = {post.contents}
+                onChange={handleChange}
+            />
+            <buton>Update</buton>
         </form>
       </div>
 
