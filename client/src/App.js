@@ -11,7 +11,7 @@ import PostsList from './components/PostsList';
 function App() {
   const [postsList, setPostsList] = useState([]);
 
-  useEffect(() => {
+  const getPostsList = () =>{
     axios.get('http://localhost:4000/api/posts')
     .then(response =>{
       setPostsList(response.data)
@@ -19,6 +19,10 @@ function App() {
     .catch(error =>{
       console.log(error, 'There was an error getting posts back from api')
     })
+  }
+
+  useEffect(() => {
+    getPostsList();
   },[]);
 
 
@@ -28,7 +32,7 @@ function App() {
       <Route exact path="/">
         <PostsList posts={postsList}/>
       </Route>
-      <Route path='/update-post/:id' render={props => <UpdateForm {...props} postsList={postsList} />}/>
+      <Route path='/update-post/:id' render={props => <UpdateForm {...props} postsList={postsList} getPostsList={getPostsList} />}/>
     </div>
   );
 }

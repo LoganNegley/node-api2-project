@@ -8,9 +8,18 @@ const initialPost ={
 
 function UpdateForm(props) {
     const [post, setPost] = useState(initialPost);
-    const id = props.match.params.id;
-    
-    console.log(props)
+
+// Find the post matching ID
+    useEffect(()=>{
+        const postToUpdate = props.postsList.find(item => (
+            `${item.id}` === props.match.params.id
+        ))
+        console.log(postToUpdate)
+
+        if(postToUpdate){
+            setPost(postToUpdate)
+        }
+    },[]);
 
   return (
       <div className='updateForm'>
