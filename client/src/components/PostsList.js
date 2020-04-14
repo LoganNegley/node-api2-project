@@ -19,6 +19,7 @@ function PostsList(props) {
               <Link to={`/update-post/${item.id}`}>
                 <Button>Edit Post</Button>
               </Link>
+              <button>Get comments</button>
             </Card>
           ))}
         </Row>
