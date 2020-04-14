@@ -1,31 +1,33 @@
 import React, {useEffect, useState} from 'react';
-import { Route } from "react-router-dom";
-import './App.css';
 import axios from 'axios';
 
-// Components
-import UpdateForm from './components/UpdateForm';
-import PostsList from './components/PostsList';
 
-
-function CommentList() {
+function CommentList(props) {
   const [comments, setComments] = useState([]);
+  const [post, setPost] = useState({});
 
-  const getComments = () =>{
-    axios.get('http://localhost:4000/api/posts/:id/comments')
-    .then(response =>{
-      console.log(response)
-    })
-    .catch(error =>{
-      console.log(error, 'There was an error getting comments back from api')
-    })
-  }
+     const getPost = () =>{
+     props.postsList.find(item => (
+        `${item.id}` === props.match.params.id 
+    ));
+        setPost(getPost)
+     };
+
+//   const getComments = () =>{
+//     axios.get('http://localhost:4000/api/posts/:id/comments')
+//     .then(response =>{
+//       console.log(response)
+//     })
+//     .catch(error =>{
+//       console.log(error, 'There was an error getting comments back from api')
+//     })
+//   }
 
 
 
-  useEffect(() => {
-    getPostsList();
-  },[]);
+//   useEffect(() => {
+//     getPostsList();
+//   },[]);
 
       if(!comments){ 
      return <h3>....Loading your comments</h3>
@@ -34,9 +36,9 @@ function CommentList() {
 
   return (
     <div className="comment-container">
-        
+
     </div>
   );
 }
 
-export default App;
+export default CommentList;

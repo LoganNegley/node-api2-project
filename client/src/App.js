@@ -6,6 +6,7 @@ import axios from 'axios';
 // Components
 import UpdateForm from './components/UpdateForm';
 import PostsList from './components/PostsList';
+import CommentList from './components/CommentList';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <PostsList posts={postsList} getPostsList={getPostsList}/>
       </Route>
       <Route path='/update-post/:id' render={props => <UpdateForm {...props} postsList={postsList} getPostsList={getPostsList}/>}/>
+      <Route path='/comments/:id' render={props => <CommentList {...props} postsList={postsList} getPostsList={getPostsList}/>}/>
     </div>
   );
 }

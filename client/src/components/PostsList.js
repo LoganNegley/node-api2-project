@@ -1,11 +1,10 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
 import {Link} from 'react-router-dom';
+import CommentList from './CommentList';
 
 function PostsList(props) {
-
- 
 
   return (
 
@@ -19,7 +18,9 @@ function PostsList(props) {
               <Link to={`/update-post/${item.id}`}>
                 <Button>Edit Post</Button>
               </Link>
-              <button>Get comments</button>
+              <Link to={`/comments/${item.id}`}>
+                <Button>Get comments</Button>
+              </Link>
             </Card>
           ))}
         </Row>
