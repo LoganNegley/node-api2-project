@@ -47,7 +47,7 @@ const handleSubmit = event => {
 
 
   return (
-      <div className='updateForm'>
+      <div className='updateForm-wrapper'>
         <form onSubmit={handleSubmit}>
             <input
                 name='title'

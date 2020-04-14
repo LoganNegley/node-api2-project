@@ -36,7 +36,7 @@ function App() {
     <div className="App">
 
       <Route exact path="/">
-        <PostsList posts={postsList}/>
+        <PostsList posts={postsList} getPostsList={getPostsList}/>
       </Route>
       <Route path='/update-post/:id' render={props => <UpdateForm {...props} postsList={postsList} getPostsList={getPostsList}/>}/>
     </div>

@@ -8,6 +8,7 @@ function PostsList(props) {
  
 
   return (
+
       <Container>
       <h1>My Posts</h1>
         <Row xs="1" sm="2" md="4">

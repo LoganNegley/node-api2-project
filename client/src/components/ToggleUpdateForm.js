@@ -10,7 +10,7 @@ setToggle(toggle === 'off' ? 'on' : 'off')
 
   return (
       <div className={`toggleSwitch ${toggle}`} onClick={switchToggle}>
-
+        <button>Toggle here</button>
       </div>
   );
 }
