@@ -41,3 +41,29 @@
 .card-body{
   margin:1rem;
 }
+ .updateForm-wrapper{
+   background-color:#17A2B8;
+   width:50%;
+   height:400px;
+   margin:0 auto;
+   margin-top:300px;
+ }
+
+ form{
+   display:flex;
+   flex-flow:column;
+  
+ }
+
+ form input{
+width:75%;
+align-self: center;
+margin-top:1rem;
+margin-bottom:1rem;
+padding:1rem;
+ }
+
+ form button{
+   width:50%;
+   align-self: center;
+ }

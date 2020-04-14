@@ -10,9 +10,13 @@ function CommentList(props) {
      props.postsList.find(item => (
         `${item.id}` === props.match.params.id 
     ));
-        setPost(getPost)
+    if(getPost){
+       setPost(getPost)
+    }
+       
      };
 
+console.log(post)
 //   const getComments = () =>{
 //     axios.get('http://localhost:4000/api/posts/:id/comments')
 //     .then(response =>{
@@ -36,7 +40,7 @@ function CommentList(props) {
 
   return (
     <div className="comment-container">
-
+      <h1>This is the comments page</h1>
     </div>
   );
 }

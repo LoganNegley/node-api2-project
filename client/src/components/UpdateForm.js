@@ -48,7 +48,9 @@ const handleSubmit = event => {
 
   return (
       <div className='updateForm-wrapper'>
+      <h1>Update your post here!</h1>
         <form onSubmit={handleSubmit}>
+            <h5>Title</h5>
             <input
                 name='title'
                 type='text-'
@@ -56,6 +58,7 @@ const handleSubmit = event => {
                 value={post.title}
                 onChange={handleChange}
             />
+            <h5>Contents</h5>
             <input
                 name='contents'
                 type='text'
